@@ -4,10 +4,11 @@ from flask import redirect
 import urllib.parse 
 from flask_sqlalchemy import SQLAlchemy
 
-params = urllib.parse.quote_plus("DRIVER={SQL Server};Server=tcp:db2-2387.database.windows.net,1433;Database=crud;Uid=dbadmin;Pwd=inti@lDrift#1;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
+#params = urllib.parse.quote_plus("DRIVER={SQL Server};Server=tcp:db2-2387.database.windows.net,1433;Database=crud;Uid=dbadmin;Pwd=inti@lDrift#1;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
@@ -72,5 +73,5 @@ def resolve_task(task_id):
     return redirect('/')
 
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+     app.run()
