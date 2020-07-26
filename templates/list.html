@@ -1,14 +1,16 @@
-<form action="/task" method="post">
-    <p><input type="text" name="content"> <input type="submit" value="Add task"></p>
-</form>
 
-<h3> Task List:</h3>
 <ul>
 {% for task in tasks %}
     <li>
-        {% if task.done %} <strike> {% endif %}{{ task.content }} {% if task.done %} </strike>{% endif %} &nbsp;
-        <a href="/done/{{ task.id }}">Done</a> &nbsp;
+        {% if task.done %} <strike> {% endif %}{{ task.content }} {% if task.done %} </strike>{% endif %}
+        <a href="/done/{{ task.id }}">Done</a> 
         <a href="/delete/{{ task.id }}">Delete</a>
     </li>
 {% endfor %}
 </ul>
+
+
+<form action="/task" method="post">
+    <p><input type="text" name="content"></p> 
+    <input type="submit" value="Add task">
+</form>
