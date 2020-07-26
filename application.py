@@ -18,7 +18,7 @@ def add_task():
     if not content:
         return 'Error'
 
-    if tasks:
+    if tasks  < 1:
         task = {'id': 1, 'content': content, 'done': 0}
     else:
         task = {'id': tasks[-1]['id']+1, 'content': content, 'done': 0}
