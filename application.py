@@ -18,7 +18,7 @@ def add_task():
     if not content:
         return 'Error'
 
-    if tasks  < 1:
+    if len(tasks)  < 1:
         task = {'id': 1, 'content': content, 'done': 0}
     else:
         task = {'id': tasks[-1]['id']+1, 'content': content, 'done': 0}
@@ -44,7 +44,7 @@ def resolve_task(task_id):
             if task['done'] == 0:
                 task['done'] = 1
             else:
-                task['done'] = 1
+                task['done'] = 0
 
     return redirect('/')
 
