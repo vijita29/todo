@@ -4,7 +4,7 @@ from flask import redirect
 import urllib.parse 
 
 app = Flask(__name__)
-tasks = []
+tasks = [{'id': 1, 'content': 'Read', 'done': 0}, {'id': 2, 'content': 'Shopping', 'done': 0}, {'id': 3, 'content': 'Cleaning', 'done': 0}]
 
 
 @app.route('/')
