@@ -2,7 +2,6 @@ from flask import Flask, request
 from flask import render_template
 from flask import redirect
 import urllib.parse 
-from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 tasks = []
@@ -47,8 +46,8 @@ def resolve_task(task_id):
     return redirect('/')
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 
 
 
