@@ -18,7 +18,10 @@ def add_task():
     if not content:
         return 'Error'
 
-    task = {'id': tasks[-1]['id']+1, 'content': content, 'done': 0}
+    if tasks:
+        task = {'id': 1, 'content': content, 'done': 0}
+    else:
+        task = {'id': tasks[-1]['id']+1, 'content': content, 'done': 0}
     tasks.append(task)
     return redirect('/')
 
