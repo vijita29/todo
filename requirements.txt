@@ -5,7 +5,7 @@ Flask==0.12.2
 Flask-Assets==0.12
 Flask-SQLAlchemy==2.2
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe
 pbr==3.1.1
 pyodbc==4.0.30
